@@ -79,7 +79,7 @@ This PowerShell script is designed to initiate the execution of the `PowerStruxW
 Ensure you open PowerShell with administrative privileges to allow the necessary operations (e.g., starting/stopping services, accessing remote systems).
 
 2. Import the Script into Your PowerShell Session
-To use the `Initiate-PowerStruxRemote` function in your session, you need to import the script by running the following command: `. "C:\Path\To\Initiate-PowerStruxRemote.ps1'"
+To use the `Initiate-PowerStruxRemote` function in your session, you need to import the script by running the following command:
     ```powershell
     . "C:\Path\To\Initiate-PowerStruxRemote.ps1'"
     ```
