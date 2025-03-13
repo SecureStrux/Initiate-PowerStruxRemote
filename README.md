@@ -88,14 +88,14 @@ To use the `Initiate-PowerStruxRemote` function in your session, you need to imp
     ```
 
 3. Execute the function:
-    ### Example 1: Running Locally
+    #### Example 1: Running Locally
     ```powershell
     Initiate-PowerStruxRemote -ComputerName "localhost" -ExePath "C:\Path\To\PowerStruxWA.exe"
     ```
     This will run the PowerStruxWA application on the local machine.
        
-    ### Example 2: Running Remotely
+    #### Example 2: Running Remotely
     ```powershell
     Initiate-PowerStruxRemote -ComputerName "Host01"
     ```
-    This will run the PowerStruxWA application remotely on `Host01`
+    This will run the PowerStruxWA application remotely on `Host01`.
