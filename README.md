@@ -106,14 +106,14 @@ This will run the PowerStruxWA application remotely on `Host01`.
 ### Example 3: Running Remotely on a Multiple Machines
 To target multiple systems, you can create a file named `target-hosts.txt`, which contains a list of hostnames (one per line). Then, use the following command to loop through each hostname and execute the function:
 
-1. **Create a `target-hosts.txt` file**  
+1. Create a `target-hosts.txt` file
  - Example file contents:
    ```
    Host01
    Host02
    Host03
    ```
-2. **Execute the loop** within the open PowerShell session:
+2. Execute the loop within the open PowerShell session:
     ```powershell
     Get-Content 'C:\Path\To\target-hosts.txt' | ForEach-Object {
         Initiate-PowerStruxRemote -ComputerName $_
