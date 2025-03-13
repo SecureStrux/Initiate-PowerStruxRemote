@@ -21,7 +21,6 @@ This PowerShell script is designed to initiate the execution of the `PowerStruxW
 - **WinRM Configuration**:  
   On remote machines, WinRM must be properly configured. This includes:
   - The WinRM service must be enabled.
-  - Necessary firewall exceptions must be configured on the remote machine to allow WinRM communication.
   - The machine must be configured to accept remote PowerShell commands (`Enable-PSRemoting`).
 
 - **Access to `C$` Share**:  
