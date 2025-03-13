@@ -4,9 +4,6 @@ This PowerShell script is designed to initiate the execution of the `PowerStruxW
 
 ## Prerequisites
 
-- **PowerShell Version**:  
-  The script uses `Invoke-Command` and other cmdlets, which require PowerShell Remoting. It is assumed that the script is executed in a PowerShell environment that supports remoting (e.g., PowerShell 3.0 or higher).
-
 - **Execution Policy**:  
   The PowerShell execution policy must be set to `RemoteSigned` or less restrictive. You can set it by running the following command in PowerShell:
 
