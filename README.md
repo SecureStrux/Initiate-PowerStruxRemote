@@ -87,15 +87,36 @@ To use the `Initiate-PowerStruxRemote` function in your session, you need to imp
     . "C:\Path\To\Initiate-PowerStruxRemote.ps1'"
     ```
 
-3. Execute the function:
-    #### Example 1: Running Locally
+3. Execute the function.
+
+## Examples
+
+### Example 1: Running Locally
+```powershell
+Initiate-PowerStruxRemote -ComputerName "localhost" -ExePath "C:\Path\To\PowerStruxWA.exe"
+```
+This will run the PowerStruxWA application on the local machine.
+   
+### Example 2: Running Remotely on a Single Machine
+```powershell
+Initiate-PowerStruxRemote -ComputerName "Host01"
+```
+This will run the PowerStruxWA application remotely on `Host01`.
+
+### Example 3: Running Remotely on a Multiple Machines
+To target multiple systems, you can create a file named `target-hosts.txt`, which contains a list of hostnames (one per line). Then, use the following command to loop through each hostname and execute the function:
+
+1. **Create a `target-hosts.txt` file**  
+ - Example file contents:
+   ```
+   Host01
+   Host02
+   Host03
+   ```
+2. **Execute the loop** within the open PowerShell session:
     ```powershell
-    Initiate-PowerStruxRemote -ComputerName "localhost" -ExePath "C:\Path\To\PowerStruxWA.exe"
+    Get-Content 'C:\Path\To\target-hosts.txt' | ForEach-Object {
+        Initiate-PowerStruxRemote -ComputerName $_
+    }
     ```
-    This will run the PowerStruxWA application on the local machine.
-       
-    #### Example 2: Running Remotely
-    ```powershell
-    Initiate-PowerStruxRemote -ComputerName "Host01"
-    ```
-    This will run the PowerStruxWA application remotely on `Host01`.
+This command reads each hostname from the target-hosts.txt file and passes it to the Initiate-PowerStruxRemote function for execution.
