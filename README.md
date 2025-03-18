@@ -120,4 +120,4 @@ To target multiple systems, you can create a file named `target-hosts.txt`, whic
         Initiate-PowerStruxRemote -ComputerName $_ -GlobalConfig "C:\Path\To\PowerStruxWAConfig.txt"
     }
     ```
-This command reads each hostname from the target-hosts.txt file and passes it to the Initiate-PowerStruxRemote function for execution. The script will execute based on the variables defined within the `C:\Path\To\PowerStruxWAConfig.txt` global configuration file.
+This command reads each hostname from the target-hosts.txt file and passes it to the Initiate-PowerStruxRemote function for execution. The script will execute based on the variables defined within the `C:\Path\To\PowerStruxWAConfig.txt` global configuration file (`GlobalConfig`).
