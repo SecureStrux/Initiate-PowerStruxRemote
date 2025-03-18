@@ -50,6 +50,11 @@ This PowerShell script is designed to initiate the execution of the `PowerStruxW
 - **Description**: Specifies the file path of the PowerStruxWA executable. Default is `"C:\Program Files\WindowsPowerShell\Modules\ReportHTML\Initiate-PowerStruxWA.exe"`.
 - **Example**: `"C:\Path\To\Initiate-PowerStruxWA.exe"`
 
+### `GlobalConfig`
+- **Type**: `String`
+- **Description**: Specifies the path to a global configuration file (PowerStruxWAConfig.txt) to be deployed on the remote or local machine.
+- **Example**: `"C:\Path\To\PowerStruxWAConfig.txt"`
+- 
 ## How It Works
 
 1. **Determine Local or Remote Execution**:  
@@ -112,7 +117,7 @@ To target multiple systems, you can create a file named `target-hosts.txt`, whic
 2. Execute the loop within the open PowerShell session:
     ```powershell
     Get-Content 'C:\Path\To\target-hosts.txt' | ForEach-Object {
-        Initiate-PowerStruxRemote -ComputerName $_
+        Initiate-PowerStruxRemote -ComputerName $_ -GlobalConfig "C:\Path\To\PowerStruxWAConfig.txt"
     }
     ```
-This command reads each hostname from the target-hosts.txt file and passes it to the Initiate-PowerStruxRemote function for execution.
+This command reads each hostname from the target-hosts.txt file and passes it to the Initiate-PowerStruxRemote function for execution. The script will execute based on the variables defined within the `C:\Path\To\PowerStruxWAConfig.txt` global configuration file.
