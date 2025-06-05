@@ -54,7 +54,7 @@ This PowerShell script is designed to initiate the execution of the `PowerStruxW
 - **Type**: `String`
 - **Description**: Specifies the path to a global configuration file (PowerStruxWAConfig.txt) to be deployed on the remote or local machine.
 - **Example**: `"C:\Path\To\PowerStruxWAConfig.txt"`
-- 
+  
 ## How It Works
 
 1. **Determine Local or Remote Execution**:  
