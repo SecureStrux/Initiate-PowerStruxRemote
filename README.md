@@ -2,7 +2,9 @@
 
 This PowerShell script is designed to initiate the execution of the `PowerStruxWA` application on either a local or remote computer. Click [here](https://powerstrux.com/) for more information on `PowerStruxWA`.
 
-## Prerequisites
+---
+
+## Requirements
 
 - **Execution Policy**:  
   The PowerShell execution policy must be set to `RemoteSigned` or less restrictive. You can set it by running the following command in PowerShell:
@@ -79,28 +81,31 @@ This PowerShell script is designed to initiate the execution of the `PowerStruxW
    After execution, if the target was remote, the script stops the WinRM service on the remote machine.
 
 ## Usage
-1. Open PowerShell as an Administrator
-Ensure you open PowerShell with administrative privileges to allow the necessary operations (e.g., starting/stopping services, accessing remote systems).
 
-2. Import the Script into Your PowerShell Session
-To use the `Initiate-PowerStruxRemote` function in your session, you need to import the script by running the following command:
-    ```powershell
-    . "C:\Path\To\Initiate-PowerStruxRemote.ps1'"
-    ```
-
-3. Execute the function.
+1. Download the repository as a ZIP archive from GitHub.
+2. Extract the ZIP archive to a known location (e.g., `C:\Scripts\InitiatePowerStrux`).
+3. Open PowerShell **as Administrator**.
+4. Change to the extracted directory:
+   ```powershell
+   Set-Location -Path "C:\Scripts\InitiatePowerStrux"
+   ```
+5. Run the script with appropriate parameters. Example:
+   ```powershell
+   .\Initiate-PowerStruxRemote.ps1 -ComputerName "Server01"
+   ```
+6. Execute the function.
 
 ## Examples
 
 ### Example 1: Running Locally
 ```powershell
-Initiate-PowerStruxRemote -ComputerName "localhost" -ExePath "C:\Path\To\PowerStruxWA.exe"
+.\Initiate-PowerStruxRemote.ps1 -ComputerName "localhost" -ExePath "C:\Path\To\PowerStruxWA.exe"
 ```
 This will run the PowerStruxWA application on the local machine.
    
 ### Example 2: Running Remotely on a Single Machine
 ```powershell
-Initiate-PowerStruxRemote -ComputerName "Host01"
+.\Initiate-PowerStruxRemote.ps1 -ComputerName "Host01"
 ```
 This will run the PowerStruxWA application remotely on `Host01`.
 
@@ -117,7 +122,7 @@ To target multiple systems, you can create a file named `target-hosts.txt`, whic
 2. Execute the loop within the open PowerShell session:
     ```powershell
     Get-Content 'C:\Path\To\target-hosts.txt' | ForEach-Object {
-        Initiate-PowerStruxRemote -ComputerName $_ -GlobalConfig "C:\Path\To\PowerStruxWAConfig.txt"
+        .\Initiate-PowerStruxRemote.ps1 -ComputerName $_ -GlobalConfig "C:\Path\To\PowerStruxWAConfig.txt"
     }
     ```
 This command reads each hostname from the target-hosts.txt file and passes it to the Initiate-PowerStruxRemote function for execution. The script will execute based on the variables defined within the `C:\Path\To\PowerStruxWAConfig.txt` global configuration file (`GlobalConfig`).
